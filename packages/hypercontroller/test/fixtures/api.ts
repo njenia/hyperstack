@@ -63,4 +63,9 @@ export default class Api {
   async postforuser(_req: Request, _res: Response) {
     return { hello: 'ok' }
   }
+
+  @Get('/prefixed/and/postfixed/')
+  async trimMySlashes(_req: Request, _res: Response) {
+    return { hello: 'ok' }
+  }
 }

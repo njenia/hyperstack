@@ -22,4 +22,8 @@ describe('routes', () => {
     ) // results is now array of snippets, see "Output" below.
     expect(results).toMatchSnapshot()
   })
+  it('handles trimming of / in routes', () => {
+    const routemap = getRouteMap([Api])
+    expect(routemap).toMatchSnapshot()
+  })
 })

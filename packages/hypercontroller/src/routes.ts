@@ -37,9 +37,11 @@ export const getRouteMap = (controllers: any[]) => {
                 ?.map((m: any) => m.params?.schema)
                 .find((s: any) => s),
               routes: meta.httpRoutes.map((r: any) => ({
-                parsedPath: parsePath(path + r.path),
+                parsedPath: parsePath(
+                  `/${L.trim(path, '/')}/${L.trim(r.path, '/')}`
+                ),                
                 verb: r.httpDecorator,
-                path: r.path,
+                path: L.trim(r.path, '/'),
               })),
             })),
         },
